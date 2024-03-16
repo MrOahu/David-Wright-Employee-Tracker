@@ -4,7 +4,9 @@
 
 An application that enables business owners to view and manage the departments, roles, and employees in their company, in order to organize and plan their business.
 
-## Screenshot
+Technologies used: node.js, inquirer, MySQL
+
+## Application Image
 
 ## URLs
 
