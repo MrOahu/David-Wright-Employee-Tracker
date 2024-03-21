@@ -96,6 +96,37 @@ function addDepartment(){
 
 }
 
+function addRole(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "newRole",
+            message:"What role would you like to add?"
+        },
+        {
+            type: "input",
+            name: "salary",
+            message:"What is the salary for this new role?"
+        },
+        {
+            type: "input",
+            name: "department_id",
+            message:"What is the department id for this role?"
+        },
+    ]).then(answer => {
+        connection.query("INSERT INTO role SET ?", {
+            title: answer.newRole,
+            salary: answer.salary,
+            department_id: answer.department_id
+        })
+        console.log("New role added!")
+        startApp()
+    })
+
+}
+
+
+
 
 
 
