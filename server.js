@@ -123,7 +123,7 @@ function addRole(){
         startApp()
     })
 
-}
+        }
 
 function addEmployee(){
     inquirer.prompt([
@@ -142,13 +142,13 @@ function addEmployee(){
             name: "role_id",
             message:"What is the role ID for the new employee?"
         },
+        {
             type: "input",
-            name: "department_id",
-            message: "What is the department ID for the new employee?"
-    },
-
-    [).then(answer => {
-        connection.query("INSERT INTO role SET ?", {
+            name: "manager_id",
+            message: "What is the manager ID for the new employee?"
+        },
+    ]).then(answer => {
+        connection.query("INSERT INTO employee SET ?", {
             title: answer.newRole,
             salary: answer.salary,
             department_id: answer.department_id
@@ -164,7 +164,8 @@ function addEmployee(){
 
 
 
+
   startApp()
 
 
-
+}
