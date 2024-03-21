@@ -1,5 +1,5 @@
 const inquirer = require("inquirer")
-const db = require("./connection")
+const connection = require("./connection")
 
 
 function startApp() {
