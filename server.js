@@ -69,6 +69,40 @@ function viewRoles(){
     })
 }
 
+function viewEmployees(){
+    connection.query("SELECT * FROM employee", (err, res)=>{
+        if (err) throw err // if there is an error in our sql query, tell us what it is
+
+        console.table(res)//if query is successful, show us a table of the response
+
+        startApp() // once everything is done, restart main prompts
+    })
+}
+
+function addDepartment(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "newDepartment",
+            message:"What department would you like to add?"
+        }
+    ]).then(answer => {
+        connection.query("INSERT INTO department SET ?", {
+            name: answer.newDepartment
+        })
+        console.log("New department added!")
+        startApp()
+    })
+
+}
+
+
+
+
+
+
+
+
   startApp()
 
 
