@@ -51,15 +51,23 @@ function startApp() {
   
 function viewDepartments(){
     connection.query("SELECT * FROM department", (err, res)=>{
-        if (err) throw err
+        if (err) throw err // if there is an error in our sql query, tell us what it is
 
-        console.table(res)
+        console.table(res)//if query is successful, show us a table of the response
 
-        startApp()
+        startApp() // once everything is done, restart main prompts
     })
 }
 
+function viewRoles(){
+    connection.query("SELECT * FROM role", (err, res)=>{
+        if (err) throw err // if there is an error in our sql query, tell us what it is
 
+        console.table(res)//if query is successful, show us a table of the response
+
+        startApp() // once everything is done, restart main prompts
+    })
+}
 
   startApp()
 
