@@ -111,7 +111,7 @@ function addRole(){
         {
             type: "input",
             name: "department_id",
-            message:"What is the department id for this role?"
+            message:"What is the department ID for this role?"
         },
     ]).then(answer => {
         connection.query("INSERT INTO role SET ?", {
@@ -125,7 +125,37 @@ function addRole(){
 
 }
 
+function addEmployee(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "firidst_name",
+            message:"What is the first name of the employee you would you like to add?"
+        },
+        {
+            type: "input",
+            name: "last_name",
+            message:"What is the last name of the employee you would like to add? "
+        },
+        {
+            type: "input",
+            name: "role_id",
+            message:"What is the role ID for the new employee?"
+        },
+            type: "input",
+            name: "department_id",
+            message: "What is the department ID for the new employee?"
+    },
 
+    [).then(answer => {
+        connection.query("INSERT INTO role SET ?", {
+            title: answer.newRole,
+            salary: answer.salary,
+            department_id: answer.department_id
+        })
+        console.log("New employee added!")
+        startApp()
+    })
 
 
 
