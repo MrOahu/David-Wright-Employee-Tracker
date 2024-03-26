@@ -161,8 +161,36 @@ function addEmployee(){
         startApp()
     })
 
+}
 
+function employeeUpdate(){
+    connection.query("SELECT * FROM employee", (err, res) => {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "chosenEmployee",
+                message: "Please choose the employee whose role you would like to update.",
+                choices: res.map(employee => employee.firidst_name + " " + employee.last_name)
+            }
+        ]).then(answer => {
+            // convert id
+            connection.query("SELECT * FROM role", (err, res) => {
+                inquirer.prompt([
+                    {
+                        type: "list",
+                        name: "chosenRole",
+                        message: "Please select new role for the employee.",
+                        choices: res.map(role => role.title)
+                    }
+                ]).then(answer => {
 
+                    
+                })
+            })
+
+        })
+    })
+}
 
 
 
@@ -172,4 +200,4 @@ function addEmployee(){
   startApp()
 
 
-}
+
