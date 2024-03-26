@@ -135,23 +135,24 @@ function addEmployee(){
         {
             type: "input",
             name: "last_name",
-            message:"What is the last name of the employee you would like to add? "
+            message:"What is the last name of the employee you would like to add?"
         },
         {
             type: "input",
             name: "role_id",
-            message:"What is the role ID for the new employee?"
+            message:"What is the role ID for the employee you would like to add?"
         },
         {
             type: "input",
             name: "manager_id",
-            message: "What is the manager ID for the new employee?"
+            message: "What is the manager ID for the employee you would like to add?"
         },
     ]).then(answer => {
         connection.query("INSERT INTO employee SET ?", {
-            title: answer.newRole,
-            salary: answer.salary,
-            department_id: answer.department_id
+            firidst_name: answer.firidst_name,
+            last_name: answer.last_name,
+            role_id: answer.role_id,
+            manager_id: answer.manager_id
         })
         console.log("New employee added!")
         startApp()
