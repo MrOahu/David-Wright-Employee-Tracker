@@ -109,9 +109,10 @@ function addRole(){
             message:"What is the salary for this new role?"
         },
         {
-            type: "input",
+            type: "list",
             name: "department_id",
-            message:"What is the department ID for this role?"
+            message:"What is the department ID for this role?",
+            choices: [1, 2, 3, 4, 5]
         },
     ]).then(answer => {
         connection.query("INSERT INTO role SET ?", {
@@ -138,14 +139,16 @@ function addEmployee(){
             message:"What is the last name of the employee you would like to add?"
         },
         {
-            type: "input",
+            type: "list",
             name: "role_id",
-            message:"What is the role ID for the employee you would like to add?"
+            message:"What is the role ID for the employee you would like to add?",
+            choices: [1, 2, 3, 4, 5]
         },
         {
-            type: "input",
+            type: "list",
             name: "manager_id",
-            message: "What is the manager ID for the employee you would like to add?"
+            message: "What is the manager ID for the employee you would like to add?",
+            choices: [1, 2, 3, 4, 5]
         },
     ]).then(answer => {
         connection.query("INSERT INTO employee SET ?", {
