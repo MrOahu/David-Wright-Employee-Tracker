@@ -174,6 +174,8 @@ function employeeUpdate(){
             }
         ]).then(answer => {
             // convert id
+            const employee = res.find(employee => employee.firidst_name + " " + employee.last_name === answer.chosenEmployee )
+            
             connection.query("SELECT * FROM role", (err, res) => {
                 inquirer.prompt([
                     {
@@ -183,8 +185,11 @@ function employeeUpdate(){
                         choices: res.map(role => role.title)
                     }
                 ]).then(answer => {
+                    const role =  res.find(role => role.title === answer.chosenRole)
 
-                    
+                    connection.query("UPDATE employee SET role_id = ? WHERE id = ?", [role.id, employee.id])
+                    console.log("Employee role updated!")
+                    startApp()
                 })
             })
 
