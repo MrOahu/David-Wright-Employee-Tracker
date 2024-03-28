@@ -10,9 +10,9 @@ Technologies used: Node.js, Inquirer, MySQL2
 
 ## URLs
 
-Video Link URL:
+Video Link URL: https://drive.google.com/file/d/1soJ3C5MBMdmoLRGik6vtCLKj4hfaAahj/view
 
-GitHub Repository URL:
+GitHub Repository URL: https://github.com/MrOahu/David-Wright-Employee-Tracker
 
 ## Author
 
