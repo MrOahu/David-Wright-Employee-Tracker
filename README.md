@@ -6,8 +6,6 @@ An application that enables business owners to view and manage the departments, 
 
 Technologies used: Node.js, Inquirer, MySQL2
 
-## Application Image
-
 ## URLs
 
 Video Link URL: https://drive.google.com/file/d/1soJ3C5MBMdmoLRGik6vtCLKj4hfaAahj/view
